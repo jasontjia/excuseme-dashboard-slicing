@@ -1,7 +1,6 @@
 const Topbar = () => {
   return (
     <div className="flex justify-between items-center py-4 px-8 bg-white rounded-2xl">
-      {/* Logo kiri */}
       <div className="flex items-center space-x-2">
         <img
           src="/Logo.png"
@@ -10,7 +9,6 @@ const Topbar = () => {
         />
       </div>
 
-      {/* Menu kanan */}
       <nav className="flex items-center space-x-6 text-gray-700 font-medium">
         <a href="#" className="hover:text-blue-600 transition-colors">
           home

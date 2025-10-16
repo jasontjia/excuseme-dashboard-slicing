@@ -8,7 +8,6 @@ export default {
     extend: {
       fontFamily: {
         aileron: ['Aileron', 'sans-serif'],
-        roboto: ['"Roboto"', "sans-serif"],
       },
     },
   },
