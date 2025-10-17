@@ -26,15 +26,17 @@ const StatCard = () => {
   ];
 
   return (
-    <div className="grid grid-cols-3 gap-6 w-full">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 w-full">
       {cards.map((card) => (
         <div
           key={card.id}
-          className="bg-white rounded-2xl shadow-md p-5 w-full font-roboto transition-transform duration-200 hover:scale-105 hover:shadow-lg"
+          className="bg-white rounded-2xl shadow-xl p-4 sm:p-5 w-full font-roboto transition-transform duration-200 hover:scale-105 hover:shadow-lg"
         >
           {/* Header */}
           <div className="flex justify-between items-start mb-2">
-            <h3 className="text-[14px] font-medium text-black">{card.title}</h3>
+            <h3 className="text-[13px] sm:text-[14px] font-medium text-black">
+              {card.title}
+            </h3>
             {card.type === "message" ? (
               <ChatBubbleLeftIcon className="h-5 w-5 text-black" />
             ) : (
@@ -43,23 +45,25 @@ const StatCard = () => {
           </div>
 
           {/* Value */}
-          <p className="text-3xl font-semibold text-black">{card.value}</p>
+          <p className="text-2xl sm:text-3xl font-semibold text-black">
+            {card.value}
+          </p>
 
           {/* Content */}
           {card.type === "message" && (
             <>
               <div className="relative mt-2">
-                <div className="w-full h-2 bg-gray-100 rounded-full">
+                <div className="w-full h-2 bg-[#DBE8F4] rounded-full">
                   <div
                     className="absolute top-0 left-0 h-2 bg-[#1767B2] rounded-full"
                     style={{ width: `${card.progress}%` }}
                   ></div>
                 </div>
-                <span className="absolute right-0 -top-5 text-xs font-medium text-black">
+                <span className="absolute right-20 -top-5 text-xs font-semibold text-black">
                   {card.progress}%
                 </span>
               </div>
-              <p className="text-sm font-semibold mt-3 text-black">
+              <p className="text-xs sm:text-sm font-semibold mt-3 text-black">
                 Response Rate
               </p>
             </>
@@ -68,21 +72,21 @@ const StatCard = () => {
           {card.type === "leads" && (
             <div className="flex items-center justify-between mt-2">
               <div>
-                <p className="text-sm font-semibold text-black">
+                <p className="text-xs sm:text-sm font-semibold text-black">
                   60%{" "}
                   <span className="font-normal text-black">Daily Goal</span>
                 </p>
-                <p className="text-sm font-semibold text-black">
+                <p className="text-xs sm:text-sm font-semibold text-black">
                   72 <span className="font-normal text-black">This week</span>
                 </p>
               </div>
-              <div className="relative w-12 h-12">
-                <svg className="w-12 h-12 transform -rotate-90">
+              <div className="relative w-10 h-10 sm:w-12 sm:h-12">
+                <svg className="w-full h-full transform -rotate-90">
                   <circle
                     cx="24"
                     cy="24"
                     r="20"
-                    stroke="#E5E7EB"
+                    stroke="#1767B2" 
                     strokeWidth="4"
                     fill="none"
                   />
@@ -90,7 +94,7 @@ const StatCard = () => {
                     cx="24"
                     cy="24"
                     r="20"
-                    stroke="#1767B2"
+                    stroke="#DBE8F4"
                     strokeWidth="4"
                     fill="none"
                     strokeDasharray="125.6"
@@ -98,7 +102,7 @@ const StatCard = () => {
                     strokeLinecap="round"
                   />
                 </svg>
-                <span className="absolute inset-0 flex items-center justify-center text-xs font-medium text-black">
+                <span className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-black">
                   {card.progress}%
                 </span>
               </div>

@@ -6,7 +6,7 @@ import LineChart from "./components/LineChart";
 function App() {
   return (
     <div className="min-h-screen flex justify-center items-center bg-[#DBE8F4]">
-      <div className="w-[1300px] h-[800px] bg-white rounded-3xl shadow-2xl overflow-hidden flex mx-auto mt-10 mb-10 p-6">
+      <div className="w-[1300px] h-[800px] bg-[#ffff] rounded-3xl shadow-2xl overflow-hidden flex mx-auto mt-10 mb-10 p-6">
         {/* Sidebar */}
         <Sidebar />
 
@@ -20,7 +20,7 @@ function App() {
             <StatCard />
 
             {/* Line chart */}
-            <div className="bg-white rounded-2xl p-6 shadow-md">
+            <div className="bg-white p-6">
               <LineChart />
             </div>
           </div>

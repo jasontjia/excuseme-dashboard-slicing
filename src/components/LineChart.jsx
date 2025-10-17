@@ -24,48 +24,63 @@ const data = [
 const LineChart = () => {
   return (
     <div
-      className="bg-white rounded-xl p-6 mt-6 font-roboto text-[10x]"
+      className="
+        bg-white 
+        p-4 
+        sm:p-5 
+        md:p-6 
+        mt-4 
+        sm:mt-5 
+        md:mt-6 
+        rounded-2xl 
+        shadow-sm 
+        font-roboto 
+        w-full 
+        max-w-full
+      "
       style={{ fontFamily: "Roboto, sans-serif" }}
     >
-      <ResponsiveContainer width="100%" height={250}>
-        <LChart data={data}>
-          <CartesianGrid strokeDasharray="3 3" stroke="#F0F0F0" />
-          <XAxis
-            dataKey="name"
-            tick={{ fontSize: 10, fill: "#A3A3A3" }}
-            axisLine={false}
-            tickLine={false}
-          />
-          <YAxis
-            tick={{ fontSize: 10, fill: "#A3A3A3" }}
-            axisLine={false}
-            tickLine={false}
-          />
-          <Tooltip
-            contentStyle={{
-              fontFamily: "Roboto, sans-serif",
-              fontSize: "13px",
-              borderRadius: "8px",
-              border: "none",
-              boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
-            }}
-          />
-          <Line
-            type="monotone"
-            dataKey="uv"
-            stroke="#1767B2"
-            strokeWidth={3}
-            dot={{ r: 4 }}
-          />
-          <Line
-            type="monotone"
-            dataKey="pv"
-            stroke="#DBE8F4"
-            strokeWidth={2}
-            dot={false}
-          />
-        </LChart>
-      </ResponsiveContainer>
+      <div className="w-full h-[200px] sm:h-[220px] md:h-[250px] lg:h-[300px]">
+        <ResponsiveContainer width="100%" height="100%">
+          <LChart data={data}>
+            <CartesianGrid strokeDasharray="3 3" stroke="#F0F0F0" />
+            <XAxis
+              dataKey="name"
+              tick={{ fontSize: 10, fill: "#A3A3A3" }}
+              axisLine={false}
+              tickLine={false}
+            />
+            <YAxis
+              tick={{ fontSize: 10, fill: "#A3A3A3" }}
+              axisLine={false}
+              tickLine={false}
+            />
+            <Tooltip
+              contentStyle={{
+                fontFamily: "Roboto, sans-serif",
+                fontSize: "13px",
+                borderRadius: "8px",
+                border: "none",
+                boxShadow: "0 2px 8px rgba(0,0,0,0.1)",
+              }}
+            />
+            <Line
+              type="monotone"
+              dataKey="uv"
+              stroke="#1767B2"
+              strokeWidth={3}
+              dot={{ r: 4 }}
+            />
+            <Line
+              type="monotone"
+              dataKey="pv"
+              stroke="#DBE8F4"
+              strokeWidth={2}
+              dot={false}
+            />
+          </LChart>
+        </ResponsiveContainer>
+      </div>
     </div>
   );
 };
