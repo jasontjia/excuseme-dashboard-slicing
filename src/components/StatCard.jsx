@@ -68,7 +68,6 @@ const StatCard = () => {
               </p>
             </>
           )}
-
           {card.type === "leads" && (
             <div className="flex items-center justify-between mt-2">
               <div>
@@ -80,29 +79,29 @@ const StatCard = () => {
                   72 <span className="font-normal text-black">This week</span>
                 </p>
               </div>
-              <div className="relative w-10 h-10 sm:w-12 sm:h-12">
+              <div className="relative w-28 h-28 sm:w-32 sm:h-32 -translate-x-5 -translate-y-8">
                 <svg className="w-full h-full transform -rotate-90">
                   <circle
-                    cx="24"
-                    cy="24"
-                    r="20"
-                    stroke="#1767B2" 
-                    strokeWidth="4"
+                    cx="50"
+                    cy="50"
+                    r="40"
+                    stroke="#1767B2"
+                    strokeWidth="6"
                     fill="none"
                   />
                   <circle
-                    cx="24"
-                    cy="24"
-                    r="20"
+                    cx="50"
+                    cy="50"
+                    r="40"
                     stroke="#DBE8F4"
-                    strokeWidth="4"
+                    strokeWidth="6"
                     fill="none"
-                    strokeDasharray="125.6"
-                    strokeDashoffset={125.6 - (card.progress / 100) * 125.6}
+                    strokeDasharray="251"
+                    strokeDashoffset={251 - (card.progress / 100) * 251}
                     strokeLinecap="round"
                   />
                 </svg>
-                <span className="absolute inset-0 flex items-center justify-center text-xs font-semibold text-black">
+                <span className="absolute inset-0 flex items-center justify-center text-base mt-14 pr-12 font-semibold text-black">
                   {card.progress}%
                 </span>
               </div>
